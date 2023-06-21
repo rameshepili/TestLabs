@@ -1,11 +1,10 @@
-﻿$object = @{
-    'a' = @{
-        'b' = @{
-            'c' = 'd'
+$nestedObject = @{
+    level1 = @{
+        level2 = @{
+            level3 = "Nested value"
         }
     }
 }
 
-$key = 'a/b/c'
-$value = Get-NestedValue -Object $object -Key $key
-Write-Host $value  # Output: d
+$result = Get-NestedValue -Object $nestedObject -Key "level1.level2.level3"
+Write-Host $result
